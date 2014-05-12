@@ -24,7 +24,11 @@ epc_data<-read.table(file="./data/household_power_consumption.txt",
 epc_data$Date_formated = format(strptime(epc_data[,1], format ="%d/%m/%Y"), "%a")
 
 head(epc_data)
+png(filename = "plot2.png",
+    width = 480, height = 480, units = "px")
 
 plot(epc_data$Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)", main="", xaxt="n")
 
 axis(side = 1, at = c(1,(nrows/2 + 1),2880), labels = c("Thu", "Fri", "Sat"))
+
+dev.off()

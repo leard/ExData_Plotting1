@@ -23,7 +23,11 @@ epc_data<-read.table(file="./data/household_power_consumption.txt",
 
 head(epc_data)
 
+png(filename = "plot1.png",
+    width = 480, height = 480, units = "px")
 
 hist(epc_data$Global_active_power, 
      col="red", xlab="Global Active Power (kilowatts)", 
      main="Global Active Power")
+
+dev.off()

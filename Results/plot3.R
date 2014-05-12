@@ -25,6 +25,8 @@ epc_data$Date_formated = format(strptime(epc_data[,1], format ="%d/%m/%Y"), "%a"
 
 head(epc_data)
 
+png(filename = "plot4.png",
+    width = 480, height = 480, units = "px")
 #with(epc_data$, {
 ylim=range(c(0,40));
 plot(epc_data$Sub_metering_1, type="l", xlab="", 
@@ -44,5 +46,6 @@ axis(side = 1, at = c(1,(nrows/2 + 1),2880), labels = c("Thu", "Fri", "Sat"))
 legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
        col=c("black", "red", "blue"), lty = 1)
 
+dev.off()
 #})
 

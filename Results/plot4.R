@@ -25,6 +25,8 @@ epc_data$Date_formated = format(strptime(epc_data[,1], format ="%d/%m/%Y"), "%a"
 
 head(epc_data)
 
+png(filename = "plot4.png",
+    width = 480, height = 480, units = "px")
 par(mfrow = c(2,2))
 
 with(epc_data,{
@@ -61,7 +63,7 @@ with(epc_data,{
   axis(side = 1, at = c(1,(nrows/2 + 1),2880), labels = c("Thu", "Fri", "Sat"))
   
 })
-
+dev.off()
 
 #})
 
