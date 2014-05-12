@@ -28,19 +28,19 @@ head(epc_data)
 #with(epc_data$, {
 ylim=range(c(0,40));
 plot(epc_data$Sub_metering_1, type="l", xlab="", 
-     ylab="Global Active Power (kilowatts)", main="", xaxt="n", ylim=ylim)
+     ylab="Energy Sub Metering", main="", xaxt="n", ylim=ylim)
 
 par(new = TRUE)
 plot(epc_data$Sub_metering_2, type="l", xlab="", ylim=ylim,
-     ylab="Global Active Power (kilowatts)", 
+     ylab="Energy Sub Metering", 
      main="", xaxt="n", col="red")
 
 par(new = TRUE)
 plot(epc_data$Sub_metering_3, type="l", xlab="", ylim=ylim,
-     ylab="Global Active Power (kilowatts)", 
+     ylab="Energy Sub Metering", 
      main="", xaxt="n", col="blue")
-axis(side = 1, at = c(1,(nrows/2 + 1),2880), labels = c("Thu", "Fri", "Sat"))
 
+axis(side = 1, at = c(1,(nrows/2 + 1),2880), labels = c("Thu", "Fri", "Sat"))
 legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
        col=c("black", "red", "blue"), lty = 1)
 
